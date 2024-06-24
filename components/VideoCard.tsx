@@ -15,17 +15,16 @@ const VideoCard: React.FC<VideoCardProps> = ({
   },
 }) => {
   const { publishTime } = snippet;
-  const formattedDate = publishTime.split("T")[0];
+  const formattedDate = publishTime?.split("T")[0] || "";
 
   return (
-    <div className="card w-96 bg-base-100 shadow-xl h-">
+    <div className="card w-96 bg-base-100 shadow-xl mb-4">
       <figure>
         <Link href={`/video/${videoId}`}>
           <img
-            onClick={() => console.log(videoId)}
             width={384}
             height={288}
-            src={snippet.thumbnails.high.url}
+            src={snippet.thumbnails.high?.url || "loading"}
             alt="Portada video"
           />
         </Link>

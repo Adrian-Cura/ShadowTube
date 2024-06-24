@@ -17,7 +17,7 @@ const Feed = () => {
   }, [selectedCategory]);
 
   return (
-    <div className="flex">
+    <div className="flex w-full ">
       <SideBar
         selectedCategory={selectedCategory}
         setSelectedCategory={setSelectedCategory}
@@ -26,7 +26,9 @@ const Feed = () => {
         <h1 className="font-bold text-2xl">
           {selectedCategory} <span className=" text-[#c61717]">videos</span>
         </h1>
-        <Videos items={fetchedResults} />
+        <section className=" w-full ">
+          <Videos items={fetchedResults} />
+        </section>
       </div>
     </div>
   );

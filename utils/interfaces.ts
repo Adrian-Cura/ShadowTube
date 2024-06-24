@@ -15,13 +15,18 @@ export interface Snippet {
 
 export interface Id {
   kind: string;
-  videoId: string;
+  videoId?: string;
+  channelId?: string;
 }
 
 export interface Item {
   kind: string;
   id: Id;
   snippet: Snippet;
+}
+
+export interface statistics {
+  subscriberCount: string;
 }
 
 export interface ApiResponse {

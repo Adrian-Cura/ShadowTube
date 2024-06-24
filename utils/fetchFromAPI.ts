@@ -22,7 +22,6 @@ export const fetchResult = async (url: string) => {
   try {
     const { data } = await axios.get(`${BASE_URL}/${url}`, options);
 
-    console.log(data.items);
     return data;
   } catch (error) {
     console.error(error);

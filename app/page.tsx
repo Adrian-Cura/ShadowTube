@@ -1,11 +1,17 @@
+"use client";
+
 import Navbar from "@/components/Navbar";
-import SideBar from "@/components/SideBar";
+import { fetchResult } from "@/utils/fetchFromAPI";
+import Feed from "@/components/Feed";
+
+const handleClick = () => {
+  fetchResult("search?part=snippet&q=Music");
+};
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col p-4">
-      <Navbar />
-      <SideBar />
-    </main>
+    <div>
+      <Feed />
+    </div>
   );
 }

@@ -7,11 +7,13 @@ import { fetchResult } from "@/utils/fetchFromAPI";
 import Link from "next/link";
 import Videos from "@/components/Videos";
 
+import { Item } from "@/utils/interfaces";
+
 const VideoPage = () => {
   const { videoId } = useParams();
 
   const [videoDetail, setVideoDetail] = useState(null);
-  const [videos, setVideos] = useState(null);
+  const [videos, setVideos] = useState<Item[] | null>(null);
 
   useEffect(() => {
     fetchResult(`videos?part=snippet,statistics&id=${videoId}`).then((data) =>

@@ -33,9 +33,12 @@ const VideoCard: React.FC<VideoCardProps> = ({
         <h2 className="card-title">
           <div className="badge badge-secondary">{snippet.channelTitle}</div>
         </h2>
-        <p>{snippet.title}</p>
-        <div className="card-actions justify-end">
-          <div className="badge badge-outline">{formattedDate}</div>
+
+        <Link href={`/video/${videoId}`}>
+          <p>{snippet.title}</p>
+        </Link>
+        <div className="card-actions justify-end mt-2">
+          <div className=" badge badge-outline">{formattedDate}</div>
         </div>
       </div>
     </div>

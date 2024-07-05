@@ -4,22 +4,15 @@ import ChannelCard from "./ChannelCard";
 
 export interface VideosProps {
   items?: Item[] | null;
-  searchedVideos?: Item[] | null;
   direction?: string;
   channel?: boolean;
   justify?: string;
 }
 
-const Videos = ({
-  items,
-  searchedVideos,
-  direction,
-  channel,
-  justify,
-}: VideosProps) => {
+const Videos = ({ items, direction, channel, justify }: VideosProps) => {
   return (
     <div
-      className={`m-2 gap-4 ${direction || "flex"} ${
+      className={`m-2 gap-4 ${direction || "flex justify-center"} ${
         justify && justify
       } flex-wrap`}
     >

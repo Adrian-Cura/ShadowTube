@@ -10,7 +10,7 @@ export const BASE_URL = "https://youtube-v31.p.rapidapi.com";
 const options = {
   url: BASE_URL,
   params: {
-    maxResults: "4",
+    maxResults: "30",
   },
   headers: {
     "x-rapidapi-key": apiKey,

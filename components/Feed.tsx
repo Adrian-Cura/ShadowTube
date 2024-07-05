@@ -12,6 +12,7 @@ const Feed = () => {
 
   useEffect(() => {
     if (searchQuery) {
+      setSelectedCategory("last news");
       fetchResult(`search?part=snippet&q=${searchQuery}`).then(
         (data: ApiResponse) => {
           setFetchedResults(data.items);
@@ -38,6 +39,16 @@ const Feed = () => {
       />
       <div className="m-4">
         <section className=" w-full ">
+          <h1 className=" font-bold text-2xl text-center">
+            {selectedCategory === "last news" &&
+              !searchQuery &&
+              selectedCategory}
+            {selectedCategory !== "last news" &&
+              !searchQuery &&
+              selectedCategory}
+            {searchQuery && searchQuery}
+            <span className=" text-red-600"> Videos</span>
+          </h1>
           <Videos items={fetchedResults} />
         </section>
       </div>

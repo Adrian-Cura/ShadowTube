@@ -32,8 +32,6 @@ const VideoPage = () => {
     statistics: { viewCount, likeCount },
   } = videoDetail;
 
-  console.log(videoDetail);
-
   return (
     <div className=" w-full h-full   flex  gap-16 sticky ">
       <div className="w-2/3 sticky top-24 h-fit mt-3 ">

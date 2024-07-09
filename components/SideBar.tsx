@@ -35,7 +35,7 @@ const SideBar = ({
   ];
 
   return (
-    <menu className="mt-3 sticky left-0 top-24 h-[60vh] z-20 flex-col">
+    <menu className="mt-3 sticky left-0 top-24 h-[60vh] z-20 flex-col hidden xl:block">
       <ul className="menu bg-base-200 w-56 rounded-lg gap-3">
         {categories.map((category, index) => (
           <li

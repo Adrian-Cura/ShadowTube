@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Snippet, Id, statistics } from "@/utils/interfaces";
+import { useState } from "react";
 
 interface VideoCardProps {
   channelDetail: {
@@ -10,16 +11,27 @@ interface VideoCardProps {
 }
 
 const ChannelCard = ({ channelDetail }: VideoCardProps) => {
+  const [imageLoaded, setImageLoaded] = useState(false);
+
   return (
     <div className="card w-96  shadow-xl ">
       <Link href={`/channel/${channelDetail?.id?.channelId}`}>
         <div className="w-96 card  shadow-xl">
           <figure>
+            {!imageLoaded && (
+              <div className="flex justify-center items-center h-[280px]">
+                <span className="loading loading-ring loading-xs"></span>
+                <span className="loading loading-ring loading-sm"></span>
+                <span className="loading loading-ring loading-md"></span>
+                <span className="loading loading-ring loading-lg"></span>
+              </div>
+            )}
             <img
-              className="rounded-[50%] mt-8 "
+              className={`rounded-[50%] mt-8 ${!imageLoaded ? "hidden" : ""}`}
               width={280}
               src={channelDetail?.snippet.thumbnails?.high?.url}
               alt="Channel Picture"
+              onLoad={() => setImageLoaded(true)}
             />
           </figure>
           <div className=" card-body flex-col ">

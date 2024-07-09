@@ -12,11 +12,11 @@ export interface VideosProps {
 const Videos = ({ items, direction, channel, justify }: VideosProps) => {
   return (
     <div
-      className={`m-2 gap-4 ${direction || "flex justify-center"} ${
-        justify && justify
-      } flex-wrap`}
+      className={`md:m-2 gap-4 flex-wrap w-screen lg:w-auto   ${
+        direction || "flex justify-center"
+      } ${justify && justify}  `}
     >
-      {items &&
+      {items ? (
         items.map((video) => (
           <div key={video.id.videoId ? video.id.videoId : video.id.channelId}>
             {channel
@@ -24,7 +24,15 @@ const Videos = ({ items, direction, channel, justify }: VideosProps) => {
               : (video.id.videoId && <VideoCard video={video} />) ||
                 (video.id.channelId && <ChannelCard channelDetail={video} />)}
           </div>
-        ))}
+        ))
+      ) : (
+        <div className="flex justify-center items-center">
+          <span className="loading loading-ring loading-xs"></span>
+          <span className="loading loading-ring loading-sm"></span>
+          <span className="loading loading-ring loading-md"></span>
+          <span className="loading loading-ring loading-lg"></span>
+        </div>
+      )}
     </div>
   );
 };

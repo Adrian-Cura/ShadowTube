@@ -25,7 +25,15 @@ const VideoPage = () => {
     ).then((data) => setVideos(data.items));
   }, [videoId]);
 
-  if (!videoDetail) return "Loading";
+  if (!videoDetail)
+    return (
+      <div className="flex justify-center items-center">
+        <span className="loading loading-ring loading-xs"></span>
+        <span className="loading loading-ring loading-sm"></span>
+        <span className="loading loading-ring loading-md"></span>
+        <span className="loading loading-ring loading-lg"></span>
+      </div>
+    );
 
   const {
     snippet: { title, channelId, channelTitle },
@@ -33,8 +41,8 @@ const VideoPage = () => {
   } = videoDetail;
 
   return (
-    <div className=" w-full h-full   flex  gap-16 sticky ">
-      <div className="w-2/3 sticky top-24 h-fit mt-3 ">
+    <div className=" w-full h-full  flex-col xl:flex xl:flex-row gap-16 lg:sticky p-4 ">
+      <div className="xl:w-2/3 xl:sticky xl:top-24 h-fit mt-3 ">
         <div>
           <ReactPlayer
             url={`https://www.youtube.com/watch?v=${videoId}`}
@@ -58,7 +66,10 @@ const VideoPage = () => {
         </div>
       </div>
       <aside>
-        <Videos items={videos} direction={"flex-col"} />
+        <Videos
+          items={videos}
+          direction={"  flex justify-center xl:flex-col mt-6"}
+        />
       </aside>
     </div>
   );

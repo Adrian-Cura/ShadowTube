@@ -32,23 +32,26 @@ const Feed = () => {
   }, [selectedCategory]);
 
   return (
-    <div className="flex w-full ">
+    <div className="  flex flex-col sm:flex-row w-full ">
       <SideBar
         selectedCategory={selectedCategory}
         setSelectedCategory={setSelectedCategory}
       />
-      <div className="m-4">
-        <section className=" w-full ">
-          <h1 className=" font-bold text-2xl text-center">
-            {selectedCategory === "last news" &&
-              !searchQuery &&
-              selectedCategory}
-            {selectedCategory !== "last news" &&
-              !searchQuery &&
-              selectedCategory}
-            {searchQuery && searchQuery}
-            <span className=" text-red-600"> Videos</span>
-          </h1>
+      <div className="lg:m-4  h-full   w-screen ">
+        <section>
+          <div className="text-center     ">
+            <h1 className=" font-bold text-2xl text-center mt-6 xl:mt-2  ">
+              {selectedCategory === "last news" &&
+                !searchQuery &&
+                selectedCategory}
+              {selectedCategory !== "last news" &&
+                !searchQuery &&
+                selectedCategory}
+              {searchQuery && searchQuery}
+              <span className=" text-red-600 "> Videos</span>
+            </h1>
+          </div>
+
           <Videos items={fetchedResults} />
         </section>
       </div>

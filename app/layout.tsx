@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <SearchProvider>
-          <main className="flex min-h-screen w-full  flex-col p-4">
+          <main className="flex min-h-screen w-full  flex-col md:p-4">
             <div className="w-full h-20 bg-black fixed top-0 z-10"></div>
             <Navbar />
             {children}

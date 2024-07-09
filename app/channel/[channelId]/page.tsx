@@ -23,12 +23,20 @@ channels?part=snippet&id=${channelId}`).then((data) => {
     });
   }, [channelId]);
 
+  if (!channelData)
+    <div className="flex justify-center items-center">
+      <span className="loading loading-ring loading-xs"></span>
+      <span className="loading loading-ring loading-sm"></span>
+      <span className="loading loading-ring loading-md"></span>
+      <span className="loading loading-ring loading-lg"></span>
+    </div>;
+
   return (
-    <div>
+    <div className=" px-4 flex-col justify-center items-center">
       <div className="flex justify-center">
         <ChannelCard channelDetail={channelData} />
       </div>
-      <section>
+      <section className=" ">
         <Videos items={videos} channel={true} justify={"justify-center"} />
       </section>
     </div>

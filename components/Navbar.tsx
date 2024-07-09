@@ -25,7 +25,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="navbar bg-base-100 rounded-lg sticky top-4 z-40 border-2 border-black ">
+    <div className="navbar bg-base-100 rounded-lg sticky top-4 z-40 border-2 border-black w-auto md:w-auto ">
       <div className="flex-1">
         <Link href={"/"}>
           <Image priority src={logo} width={45} alt="logo"></Image>

@@ -27,6 +27,7 @@ const VideoCard: React.FC<VideoCardProps> = ({
             height={288}
             src={snippet.thumbnails.high?.url || "loading"}
             alt="Portada video"
+            priority={true}
           />
         </Link>
       </figure>

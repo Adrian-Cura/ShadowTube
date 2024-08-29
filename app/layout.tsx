@@ -7,8 +7,8 @@ import { SearchProvider } from "@/context/SearchContext";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "YouTube Clone",
-  description: "My YouTube Clone",
+  title: "Shadow Tube",
+  description: "Watch videos from all over the world",
 };
 
 export default function RootLayout({

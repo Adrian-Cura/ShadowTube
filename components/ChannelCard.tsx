@@ -30,6 +30,7 @@ const ChannelCard = ({ channelDetail }: VideoCardProps) => {
             <Image
               className={`rounded-[50%] mt-8 ${!imageLoaded ? "hidden" : ""}`}
               width={280}
+              height={288}
               src={channelDetail?.snippet.thumbnails?.high?.url as string}
               alt="Channel Picture"
               onLoad={() => setImageLoaded(true)}

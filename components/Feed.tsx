@@ -37,10 +37,10 @@ const Feed = () => {
         selectedCategory={selectedCategory}
         setSelectedCategory={setSelectedCategory}
       />
-      <div className="lg:m-4  h-full   w-screen ">
+      <div className="lg:m-4 h-full w-screen ">
         <section>
-          <div className="text-center     ">
-            <h1 className=" font-bold text-2xl text-center mt-6 xl:mt-2  ">
+          <div className="text-center ">
+            <h1 className=" font-bold text-2xl text-center mt-6 xl:mt-2">
               {selectedCategory === "last news" &&
                 !searchQuery &&
                 selectedCategory}
@@ -48,7 +48,7 @@ const Feed = () => {
                 !searchQuery &&
                 selectedCategory}
               {searchQuery && searchQuery}
-              <span className=" text-red-600 "> Videos</span>
+              <span className=" text-red-600"> Videos</span>
             </h1>
           </div>
 

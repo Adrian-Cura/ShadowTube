@@ -29,7 +29,7 @@ const Feed = () => {
         }
       );
     }
-  }, [selectedCategory]);
+  }, [selectedCategory, searchQuery]);
 
   return (
     <div className="  flex flex-col sm:flex-row w-full ">

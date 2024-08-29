@@ -6,7 +6,7 @@ import { fetchResult } from "@/utils/fetchFromAPI";
 import { useState, useEffect } from "react";
 import ChannelCard from "@/components/ChannelCard";
 
-const channelPage = () => {
+const ChannelPage = () => {
   const { channelId } = useParams();
   const [videos, setVideos] = useState(null);
   const [channelData, setChannelData] = useState(null);
@@ -23,14 +23,6 @@ channels?part=snippet&id=${channelId}`).then((data) => {
     });
   }, [channelId]);
 
-  if (!channelData)
-    <div className="flex justify-center items-center">
-      <span className="loading loading-ring loading-xs"></span>
-      <span className="loading loading-ring loading-sm"></span>
-      <span className="loading loading-ring loading-md"></span>
-      <span className="loading loading-ring loading-lg"></span>
-    </div>;
-
   return (
     <div className=" px-4 flex-col justify-center items-center">
       <div className="flex justify-center">
@@ -43,4 +35,4 @@ channels?part=snippet&id=${channelId}`).then((data) => {
   );
 };
 
-export default channelPage;
+export default ChannelPage;

@@ -9,12 +9,14 @@ import React, {
   SetStateAction,
 } from "react";
 
-interface SearchContextProps {
+export interface SearchContextProps {
   searchQuery: string | undefined;
   setSearchQuery: Dispatch<SetStateAction<string | undefined>>;
 }
 
-const SearchContext = createContext<SearchContextProps | undefined>(undefined);
+export const SearchContext = createContext<SearchContextProps | undefined>(
+  undefined
+);
 
 export const SearchProvider = ({ children }: { children: ReactNode }) => {
   const [searchQuery, setSearchQuery] = useState<string | undefined>(undefined);

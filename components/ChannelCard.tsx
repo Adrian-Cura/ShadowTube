@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Snippet, Id, statistics } from "@/utils/interfaces";
 import { useState } from "react";
+import Image from "next/image";
 
 interface VideoCardProps {
   channelDetail: {
@@ -26,10 +27,10 @@ const ChannelCard = ({ channelDetail }: VideoCardProps) => {
                 <span className="loading loading-ring loading-lg"></span>
               </div>
             )}
-            <img
+            <Image
               className={`rounded-[50%] mt-8 ${!imageLoaded ? "hidden" : ""}`}
               width={280}
-              src={channelDetail?.snippet.thumbnails?.high?.url}
+              src={channelDetail?.snippet.thumbnails?.high?.url as string}
               alt="Channel Picture"
               onLoad={() => setImageLoaded(true)}
             />

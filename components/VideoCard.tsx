@@ -1,4 +1,5 @@
 import { Snippet, Id } from "@/utils/interfaces";
+import Image from "next/image";
 import Link from "next/link";
 
 interface VideoCardProps {
@@ -21,7 +22,7 @@ const VideoCard: React.FC<VideoCardProps> = ({
     <div className="card w-96 bg-base-100 shadow-xl mb-4">
       <figure>
         <Link href={`/video/${videoId}`}>
-          <img
+          <Image
             width={384}
             height={288}
             src={snippet.thumbnails.high?.url || "loading"}

@@ -17,8 +17,8 @@ const Videos = ({ items, direction, channel, justify }: VideosProps) => {
       } ${justify && justify}  `}
     >
       {items ? (
-        items.map((video) => (
-          <div key={video.id.videoId ? video.id.videoId : video.id.channelId}>
+        items.map((video, index) => (
+          <div key={index}>
             {channel
               ? video.id.videoId && <VideoCard video={video} />
               : (video.id.videoId && <VideoCard video={video} />) ||

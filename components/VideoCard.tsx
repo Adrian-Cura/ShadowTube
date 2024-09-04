@@ -17,7 +17,7 @@ const VideoCard: React.FC<VideoCardProps> = ({
 }) => {
   const { publishTime } = snippet;
   const formattedDate = publishTime?.split("T")[0] || "";
-
+  console.log(snippet.thumbnails.high?.url);
   return (
     <div className="card w-96 bg-base-100 shadow-xl mb-4">
       <figure>
@@ -25,7 +25,7 @@ const VideoCard: React.FC<VideoCardProps> = ({
           <Image
             width={384}
             height={288}
-            src={snippet.thumbnails.high?.url || "loading"}
+            src={snippet.thumbnails.high?.url}
             alt="Portada video"
             priority={true}
           />

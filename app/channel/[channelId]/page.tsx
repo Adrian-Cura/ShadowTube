@@ -21,12 +21,12 @@ search?channelId=${channelId}&part=snippet%2Cid&order=date`).then((data) => {
 channels?part=snippet&id=${channelId}`).then((data) => {
       setChannelData(data.items[0]);
     });
-  }, [channelId]);
+  }, [channelId, fetchResult]);
 
   return (
     <div className=" px-4 flex-col justify-center items-center">
       <div className="flex justify-center">
-        <ChannelCard channelDetail={channelData} />
+        {channelData && <ChannelCard channelDetail={channelData} />}
       </div>
       <section className=" ">
         <Videos items={videos} channel={true} justify={"justify-center"} />
